@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html ng-app="thebook">
+<head>
+    <title>The Book</title>
+	<meta charset="utf-8" />
+
+    <!--Script-->
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/angular-route.js"></script>
+    <script src="../App.js"></script>
+    <script src="../controller/listaProfissionalController.js"></script>
+    <script src="../controller/aplicacaoController.js"></script>
+    <script src="../controller/cadastroController.js"></script>
+    <script src="../controller/comoFuncionaController.js"></script>
+    
+    <script src="../config/routeConfig.js"></script>
+    <!--Script-->
+
+    <!--Style-->
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/Site.css" rel="stylesheet" />
+    <!--Style-->
+</head>
+<body class="aplicacao">
+    <div ng-controller="aplicacaoController">
+        <div class="jumbotron">
+            {{appName}}
+        </div>
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#/comoFunciona">Como Funciona</a></li>
+
+                <li><a href="#/profissionais">Lista de Profissionais</a></li>
+                <li class="active"><a href="#/cadastro">Cadastre-se</a></li>
+
+            </ul>
+        </nav>
+        <div class="col-sm-2 bloco">
+            <p><b>B</b></p>
+            <p><b>A</b></p>
+            <p><b>T</b></p>
+        </div>
+    </div>
+    <div class="col-sm-10 navbar-default" ng-view></div>
+</body>
+</html>

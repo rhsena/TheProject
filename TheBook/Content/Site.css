@@ -1,0 +1,30 @@
+﻿.jumbotron{
+    text-align: center;
+    background-color: lightblue;
+}
+.aplicacao{
+    font-family: "Playfair Display";
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: dimgray;
+    
+}
+.form-control{
+    margin-top: 5px;
+}
+.bloco{
+    background-color:aqua;
+    color: black;
+    border-radius: 5px;
+}
+.photo {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.formulario{
+    margin-top:20px;
+    margin-left: 20px;
+}
