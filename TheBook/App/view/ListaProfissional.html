@@ -1,14 +1,47 @@
 ﻿<div>
-    <input class="form-control" type="text" ng-model="busca" />
-    <table>
-        <tr ng-repeat="profissional in profissionais | filter : busca " class="photo">  <!--filter : {Nome: busca}-->
-            <td>
-                <img src="{{profissional.PerfilPhoto}}" height="100" />
-            </td>
-            <td>
-                {{profissional.Nome}}
-            </td>
-         </tr>
-    </table>
+    <dv class="form-group">
+        <!--<div class="col-md-1">
+            <label>Buscar </label>
+            <label class="glyphicon glyphicon-search"></label>
+        </div>-->
+     
+          
+        <div class="row">
+            <div class="col-sm-1">
+                <label style="margin-top:10px;margin-left:20px;">Cidade</label>
+            </div>
+            <div class="col-xs-2 col-sm-2">
+            <select class="form-control font16" ng-model="buscaCidade">
+                <option value="">Todas</option>
+                <option value="Sao Paulo">Sao Paulo</option>
+                <option value="Curitiba">Curitiba</option>
+                <option value="Porto Alegre">Porto Alegre</option>
+                <option value="Fortaleza">Fortaleza</option>
+                <option value="Brasilia">Brasilia</option>
+            </select> 
+            </div>
+            <div class="col-sm-1">
+                <label style="margin-top:10px;margin-left:20px;">Nome</label>
+            </div>
+            <div class="col-xs-2">
+                <input class="col-md-2 form-control" type="text" ng-model="busca" placeholder="Nome" />
+            </div>
+        </div>
+        <div class="row" ng-repeat="caracteristica in caracteristicas">
+            <label  class="col-lg-2">
+                <input type="checkbox" value="{{caracteristica}}" id="caracteristica-" ng-click="toggleSelection(caracteristica)"/> {{caracteristica}}
+            </label>
+        </div>
+        <div class="col-sm-3">
+           
+        </div>
+        <div class="col-md-3"></div>
+        
+    </div>
+    <div class="col-md-6 formulario">
+        <div class="col-lg-3" ng-repeat="profissional in profissionais | filter : { Nome: busca } | filter: {Cidade : buscaCidade} | filtrarVarios: caracteristicasEscolhidas"> 
+            <img src="{{profissional.PerfilPhoto}}" height="100" /> {{profissional.Nome}}
+        </div>
+        </div>
 
 </div>
